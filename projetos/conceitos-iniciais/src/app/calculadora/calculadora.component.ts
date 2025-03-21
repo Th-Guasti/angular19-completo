@@ -6,6 +6,14 @@ import { Component } from '@angular/core';
   templateUrl: './calculadora.component.html',
   styleUrl: './calculadora.component.scss'
 })
-export class CalculadoraComponent {
 
+export class CalculadoraComponent {
+  numero1: number = 0; //ou numero1 ?: number
+  numero2: number = 0;
+  resultado: number = 0;
+
+  calcularResultado(){
+    console.log("chamando o método para calcular o resultado!");
+    this.resultado = this.numero1 + this.numero2;
+  }
 }
