@@ -1,19 +1,23 @@
-
 <div class="container">
     <div class="form-box">
-        <form>
+        <form #frm="ngForm"> <!-- frm é a variável -->
             <h2>Calculadora</h2>
             <label for="numero1">Número 1</label>
-            <input type="number" name="numero1" id="numero1">
+            <input type="number" name="numero1" id="numero1" [(ngModel)]="numero1">
 
             <label for="numero2">Número 2</label>
-            <input type="number" name="numero2" id="numero2">
+            <input type="number" name="numero2" id="numero2" [(ngModel)]="numero2">
 
             <button type="button" (click)="calcularResultado()">Somar</button>
         </form>
-
-        <div class="result-display">
-            <p>Resultado: <span id="result"> {{ resultado }} </span></p>
-        </div>
     </div>
 </div>
+
+
+<!-- linha 6: o motivo de colocar o [] é porquê é two way data binding, significando que tem dois caminhos, o do html e do componente, se eu mudar o valor da variável lá no componente, ele vai refletir aqui, por exemplo, se eu mudar o numero1 para = 60, vai aparecer na interface o número 60 -->
+
+<!-- linha 11: não precisa colocar o [] por ser one way data binding, só envia do formulário para o componente, não precisa dos colchetes porquê no evento do click, não precisa receber valor nenhum e já está enviando os valores na linha 6 e 9 -->
+
+<!-- Resumindo: para referenciar os campos, a gente utiliza o data bind -->
+
+<!-- linha 15: é usado {{ }} por referenciar na página -->
