@@ -1,10 +1,15 @@
 <div class="container">
     <h1>Lista de Compras</h1>
 
+    <!-- Formulário para adicionar itens -->
     <form #frm="ngForm" class="add-item-form" (ngSubmit)="addItem()">
+        <!-- Campo de input para digitar o nome do item -->
         <input type="text" id="item" name="item" placeholder="Digite o nome do item" [(ngModel)]="item">
+        
+        <!-- Botão de adicionar o item -->
         <button type="submit">Adicionar</button>
 
+        <!-- Botão para limpar a lista -->
         <button type="button" (click)="limpaLista()">Limpar lista</button>
     </form>
 
@@ -18,6 +23,10 @@
         </thead>
         <tbody>
             @for (elemento of lista; track elemento.id) {
+                <!-- 
+                elemento of lista: significa que a cada iteração do loop, a variável elemento representará um item da lista. Isso é similar ao for no JavaScript.
+                a palavra-chave track indica que o Blazor deve rastrear os elementos pelo atributo id. Isso otimiza a renderização quando os elementos da lista mudam, pois o Blazor saberá exatamente qual elemento mudou, já que cada um tem um id único.
+                -->
             <tr>
                 <td>{{elemento.id}}</td>
                 <td>
