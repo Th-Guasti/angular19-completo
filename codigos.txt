@@ -1,0 +1,6 @@
+instalação angular: npm install -g @angular/cli
+criar projeto: ng new <project-name> (ng g c <project-name>) -> depois escolher a opção SASS (SCSS) -> digitar N e dar enter
+rodar projeto: npm start
+
+caso dê esse erro no seu computador "O arquivo C:\Users\Th\AppData\Roaming\npm\ng.ps1 não pode ser carregado porque 
+a execução de scripts foi desabilitada neste sistema...", abra powershell com administrador e rode essa linha de código: Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
