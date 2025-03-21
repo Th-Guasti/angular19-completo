@@ -11,9 +11,21 @@
             <button type="submit">Somar</button>
         </form>
 
+        <div class="result-display" *ngIf="resultado"> <!-- condição com a biblioteca CommonModule importada -->
+            <p>Seu resultado está abaixo:</p>
+        </div>
+
+        <!-- condição nativa -->
+        @if(resultado) { <!-- resultado != 0 && resultado != null && resultado != undefined && resultado != false -->
         <div class="result-display">
             <p>Resultado: <span id="result"> {{ resultado }} </span></p>
         </div>
+        } @else {
+            <div class="result-display">
+                <p>Seu resultado aparecerá aqui.</p>
+            </div>
+        }
+
     </div>
 </div>
 
